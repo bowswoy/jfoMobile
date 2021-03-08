@@ -5,6 +5,9 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screen/HomeScreen';
+import ContactScreen from './screen/ContactScreen';
+import TrackingScreen from './screen/TrackingScreen';
+import NewsScreen from './screen/NewsScreen';
 
 const Stack = createStackNavigator();
 
@@ -12,7 +15,17 @@ function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="Home" component={HomeScreen} />
+                <Stack.Screen 
+                name="Home" 
+                component={HomeScreen}
+                options={{
+                    title: 'กองทุนยุติธรรม'
+                }} />
+                <Stack.Screen name="Contact"
+                    component={ContactScreen}
+                    options={{ title: 'ติดต่อเรา' }} />
+                <Stack.Screen name="Tracking" component={TrackingScreen} />
+                <Stack.Screen name="News" component={NewsScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     );
